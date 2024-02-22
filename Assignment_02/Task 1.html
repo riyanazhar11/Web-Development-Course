@@ -23,7 +23,9 @@
         }
         .error
         {
-            color:rgb(243, 0, 0);
+            color:rgb(27, 0, 0);
+            font-weight: bold;
+            font-size: large;
         }
     </style>
    
@@ -50,8 +52,78 @@
             <button type="submit">Register</button>
         </form>  
     </center>
+    <script> 
+        function validateForm() 
+        {
+            var name = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var birthdate = document.getElementById("birthdate").value;
+            var email = document.getElementById("email").value;
+            var gender = document.getElementById("gender").value;
+            var phone = document.getElementById("phone").value;
+            var zipcode = document.getElementById("zipcode").value;
+            var country = document.getElementById("country").value;
+            var error = document.getElementById("error-message");
+            error.innerHTML = "";
 
-    
+            if(name.trim() == "" && username.trim() == "" && password.trim() == "" && birthdate.trim() == "" && email.trim() == "" && phone.trim() == "" && zipcode.trim() == "" && country.trim() == "") 
+            {
+                error.innerHTML = "Fill the required terms.";
+                return false;
+            }
+            else if (name.trim() == "") 
+            {
+                error.innerHTML = "Name is required.";
+                return false;
+            }
+            else if (username.trim() == "") 
+            {
+                error.innerHTML = "Username is required.";
+                return false;
+            }
+            else if (password.trim() == "") 
+            {
+                error.innerHTML = "Password is required.";
+                return false;
+            }
+            else if (birthdate.trim() == "") 
+            {
+                error.innerHTML = "Birthdate is required.";
+                return false;
+            }
+            else if (email.trim() == "" || !validateEmail(email)) 
+            {
+                error.innerHTML = "Email is required and must be a valid email address.";
+                return false;
+            }
+            else if (phone.trim() == "" || isNaN(phone)) 
+            {
+                error.innerHTML = "Phone Number is required and must be a valid number.";
+                return false;
+            }
+            else if (zipcode.trim() == "") 
+            {
+                error.innerHTML = "Zip code is required.";
+                return false;
+            }
+
+            else if (country.trim() == "") 
+            {
+                error.innerHTML = "Country is required.";
+                return false;
+            }
+            
+
+            return true;
+        }
+        function validateEmail(email) 
+        {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+
+    </script>
     
 </body>
 </html>
