@@ -5,37 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
+        .container 
+        {
             max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
         }
 
         button
         {
-            background-color: blue;
             color: white;
             width: 50%;
+            height: 30px;
         }
 
-        .row {
+        .row 
+        {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
-        .column {
-            flex: 1 1 30%; /* Adjust the percentage to fit your design */
-            max-width: 20%; /* Adjust the percentage to fit your design */
+        .column:hover 
+        {
+            transform: scale(1.1);
+        }
+
+        .column 
+        {
+            flex: 1 1 30%; 
+            max-width: 20%; 
             margin: 10px;
             padding: 20px;
             border: 1px solid #ccc;
             text-align: center;
+            transition: transform 0.3s;
+
         }
 
-        .column img {
+        .column img 
+        {
             max-width: 50%;
             height: auto;
+            transition: transform 0.3s;
+        }
+
+        .column.expanded 
+        {
+            flex: 1 1 100%;
+            max-width: 100%;
+            z-index: 1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            display:flexbox;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .column.expanded img 
+        {
+            max-width: 80%;
+            max-height: 80%;
         }
     </style>
 </head>
@@ -45,27 +79,42 @@
             <center>
                 <h1>Welcome to our website!</h1>
                 <h3>Look at this button! Wow, let's click on it!</h3>
-                <button>Learn more</button>
+                <button style="background-color: blue;" id="scrollButton" onclick="window.location.href = 'https://www.lenovo.com/pk/en/laptops/c/Laptops#type=TYPE_ATTR1;'">Learn more</button>
             </center>
         </header>
     </div>
     <div class="row">
         <div class="column">
-            <img src="images.jfif" alt="Laptop 1">
+            <img src="images.jfif" alt="Laptop 1" onclick="expandImage(this)">
             <p>Intel Core i3 11th Gen 1.7 / 4.1 Ghz, 15.6" Screen, 4 GB RAM, 256 GB SSD, Backlit, Intel Integrated Graphics, No Optical Drive, DOS, 3.64 lbs</p>
         </div>
         <div class="column">
-            <img src="images.jfif" alt="Laptop 2">
+            <img src="images.jfif" alt="Laptop 2" onclick="expandImage(this)">
             <p>Intel Core i3 11th Gen 1.7 / 4.1 Ghz, 15.6" Screen, 4 GB RAM, 256 GB SSD, Backlit, Intel Integrated Graphics, No Optical Drive, DOS, 3.64 lbs</p>
 
         </div>
         <div class="column">
-            <img src="images.jfif" alt="Laptop 3">
+            <img src="images.jfif" alt="Laptop 3" onclick="expandImage(this)">
             <p>Intel Core i3 11th Gen 1.7 / 4.1 Ghz, 15.6" Screen, 4 GB RAM, 256 GB SSD, Backlit, Intel Integrated Graphics, No Optical Drive, DOS, 3.64 lbs</p>
-
         </div>
     </div>
+    <br>
+    <div>
+        <center>
+            <button onclick="alert(showMessage())" style="background-color:green;">Thanks For Visiting!</button>
+        </center>
+    </div>
 </div>
+<script>
+    function expandImage(img) 
+    {
+        img.parentElement.classList.toggle('expanded');
+    }
+    function showMessage() 
+    {
+        alert("Thank you for visiting our website!");
+    }
+</script>
 
 </body>
 </html>
