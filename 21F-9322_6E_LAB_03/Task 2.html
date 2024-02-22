@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Boxes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body
+    {
+      background-color: azure;
+    }
+    .message 
+    {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: black;
+      border: 1px solid black;
+      color: red;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <br>
+  <div class="container">
+    <button type="button" class="btn btn-primary" onclick="displayMessage('you clicked primary button')">Primary</button>
+    <button type="button" class="btn btn-default" onclick="displayMessage('you clicked default button')">Default</button>
+    <button type="button" class="btn btn-success" onclick="displayMessage('you clicked success button')">Success</button>
+    <button type="button" class="btn btn-danger" onclick="displayMessage('you clicked danger button')">Danger</button>
+    <button type="button" class="btn btn-warning" onclick="displayMessage('you clicked warning button')">Warning</button>
+    <button type="button" class="btn btn-info" onclick="displayMessage('you clicked info button')">Info</button>
+    <button type="button" class="btn btn-basic" onclick="displayMessage('you clicked basic button')">Basic</button>
+    <div class="message" id="message"></div>
+  </div>
+  <script>
+    function displayMessage(message) 
+    {
+      document.getElementById('message').innerText = message;
+    }
+  </script>
+</body>
+</html>

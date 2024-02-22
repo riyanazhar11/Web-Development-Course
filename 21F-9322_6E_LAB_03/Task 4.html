@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDaysInMonth() 
+        {
+            var monthName = document.getElementById('month').value.toLowerCase();
+            var daysInMonth = 
+            {
+                jan: 31, feb: 28, mar: 31, apr: 30, may: 31, jun: 30,
+                jul: 31, aug: 31, sep: 30, oct: 31, nov: 30, dec: 31
+            };
+            if (daysInMonth.hasOwnProperty(monthName)) 
+            {
+                document.getElementById('result').innerHTML = '<span style="color: red;">' +
+                    'Total number of days in ' + monthName.toUpperCase() + ': ' + daysInMonth[monthName] + '</span>';
+            } 
+            else 
+            {
+                document.getElementById('result').innerText = 'Invalid month name. Please enter a valid month name.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Month Days Counter</h1>
+    <label for="month">Enter the shorthand name of the month (e.g., Jan, Feb):</label>
+    <input type="text" id="month" name="month">
+    <button type="button" onclick="getDaysInMonth()">Get Days</button>
+    <div id="result"></div>
+</body>
+</html>
