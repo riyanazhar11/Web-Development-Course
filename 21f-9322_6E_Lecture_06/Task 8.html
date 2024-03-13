@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #animatedDiv {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="animatedDiv"></div>
+    <script>
+        $(document).ready(function(){
+            $("#animatedDiv").animate({
+                left: "+=500px"
+            }, 8000); 
+        });
+    </script>
+</body>
+</html>
