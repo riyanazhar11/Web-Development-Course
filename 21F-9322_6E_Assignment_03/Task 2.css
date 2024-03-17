@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: skyblue;
+    background-image: url(cloud.jpg);
+    background-size: cover;
+}
+
+header {
+    align-items: center;
+    display:flex;
+    color: blue;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search {
+    margin-bottom: 20px;
+}
+
+#city-input {
+    padding: 5px;
+    width: 200px;
+}
+
+#search-btn {
+    padding: 5px 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.current-condition {
+    margin-bottom: 20px;
+    color:blue;
+}
+
+.forecast {
+    margin-bottom: 20px;
+    color:blue;
+}
+
+.forecast-days {
+    display: flex;
+    justify-content: space-between;
+}
+
+.day {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    text-align: center;
+}
